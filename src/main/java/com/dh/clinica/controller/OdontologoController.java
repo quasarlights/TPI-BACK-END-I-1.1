@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/odontologos")
 public class OdontologoController {
@@ -24,7 +24,7 @@ public class OdontologoController {
 
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public ResponseEntity<Odontologo> buscar(@PathVariable Integer id) {
         Odontologo odontologo = odontologoService.buscar(id).orElse(null);
 
