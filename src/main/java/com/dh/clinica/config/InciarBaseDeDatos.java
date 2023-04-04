@@ -22,7 +22,7 @@ public class InciarBaseDeDatos implements CommandLineRunner {
     private OdontologoService odontologoService;
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         cargarPacientes();
         cargarOdontologos();
     }
