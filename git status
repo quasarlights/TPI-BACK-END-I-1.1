@@ -1,0 +1,35 @@
+[33mcommit 7f5dcda5d3eab3fa08b32fabcd1f053d2b858cba[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: quasarlights <gastonestebancampagno@gmail.com>
+Date:   Mon Apr 10 13:28:33 2023 -0300
+
+    getTurno fixed
+
+[33mcommit d20e6b89f29843727ec7d72398ef4611895e5b70[m
+Author: dit <dit@Ubuntu22.04.1LTS.myguest.virtualbox.org>
+Date:   Tue Apr 4 00:30:17 2023 -0300
+
+    config
+
+[33mcommit 082b71a81a3614d549dc62d18ac90c4daaac3605[m
+Author: dit <dit@Ubuntu22.04.1LTS.myguest.virtualbox.org>
+Date:   Mon Apr 3 15:10:04 2023 -0300
+
+    runner db class
+
+[33mcommit 1ffb99ba05a65278f6f6f8c6258233037e1f089c[m
+Author: dit <dit@Ubuntu22.04.1LTS.myguest.virtualbox.org>
+Date:   Mon Apr 3 02:38:01 2023 -0300
+
+    cors
+
+[33mcommit 67f106935f2b5e25d60e61fd215d54be8f329152[m
+Author: quasarlights <gastonestebancampagno@gmail.com>
+Date:   Fri Mar 31 12:17:34 2023 -0300
+
+    cors*
+
+[33mcommit 57e20a782abad748f204a661cb349afc73b19bce[m
+Author: quasarlights <gastonestebancampagno@gmail.com>
+Date:   Wed Mar 29 14:38:05 2023 -0300
+
+    first commit

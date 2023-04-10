@@ -1,5 +1,6 @@
 package com.dh.clinica.controller;
 
+import com.dh.clinica.model.Paciente;
 import com.dh.clinica.model.Turno;
 import com.dh.clinica.service.OdontologoService;
 import com.dh.clinica.service.PacienteService;
@@ -46,6 +47,13 @@ public class TurnoController {
     public ResponseEntity<List<Turno>> listar() {
         return ResponseEntity.ok(turnoService.listar());
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Turno> buscar(@PathVariable Integer id){
+        Turno turno = turnoService.buscar(id).orElse(null);
+        return ResponseEntity.ok(turno);
+    }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminar(@PathVariable Integer id) {
