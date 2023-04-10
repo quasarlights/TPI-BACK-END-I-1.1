@@ -1,6 +1,6 @@
 package com.dh.clinica.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -8,6 +8,8 @@ import java.util.Set;
 
 @Entity
 @Table
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Odontologo {
 
     @Id
@@ -18,7 +20,8 @@ public class Odontologo {
     private String apellido;
     private Integer matricula;
 
-    @OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY)
+    /*@OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY)*/
+    @OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Turno> turnos = new HashSet<>();
 
     public Odontologo() {

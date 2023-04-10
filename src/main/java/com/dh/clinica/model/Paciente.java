@@ -1,7 +1,6 @@
 package com.dh.clinica.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -10,6 +9,8 @@ import java.util.Set;
 
 @Entity
 @Table
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Paciente {
 
     @Id
@@ -24,7 +25,8 @@ public class Paciente {
     @JoinColumn(name = "domicilio_id", referencedColumnName = "id")
     private Domicilio domicilio;
 
-    @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)
+    /*@OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)*/
+    @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Turno> turnos = new HashSet<>();
 
 
@@ -97,6 +99,7 @@ public class Paciente {
     public void setDomicilio(Domicilio domicilio) {
         this.domicilio = domicilio;
     }
+
 
     public Set<Turno> getTurnos() {
         return turnos;
