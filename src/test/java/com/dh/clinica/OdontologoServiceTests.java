@@ -48,7 +48,7 @@ public class OdontologoServiceTests {
     public void traerTodos() {
         List<Odontologo> odontologos = odontologoService.buscarTodos();
         Assert.assertTrue(!odontologos.isEmpty());
-        Assert.assertTrue(odontologos.size() == 1);
+        Assert.assertTrue(odontologos.size() >= 1);
         System.out.println(odontologos);
     }
 

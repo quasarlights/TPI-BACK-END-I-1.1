@@ -2,6 +2,7 @@ package com.dh.clinica.service;
 
 import com.dh.clinica.model.Odontologo;
 import com.dh.clinica.repository.impl.OdontologoRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 @Service
+@Slf4j
 public class OdontologoService {
 
     private final OdontologoRepository odontologoRepository;
@@ -19,6 +21,7 @@ public class OdontologoService {
     }
 
     public Odontologo registrarOdontologo(Odontologo odontologo) {
+        log.info("****************Odontologo Creado***********************");
         return odontologoRepository.save(odontologo);
 
     }

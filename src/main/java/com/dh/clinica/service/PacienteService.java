@@ -3,6 +3,7 @@ package com.dh.clinica.service;
 
 import com.dh.clinica.model.Paciente;
 import com.dh.clinica.repository.impl.PacienteRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 @Service
+@Slf4j
 public class PacienteService {
 
     private final PacienteRepository pacienteRepository;
@@ -20,7 +22,9 @@ public class PacienteService {
     }
 
     public Paciente guardar(Paciente p) {
-       return pacienteRepository.save(p);
+
+        log.info("****************Paciente Guardado********************");
+        return pacienteRepository.save(p);
     }
 
     public Optional<Paciente> buscar(Integer id) {

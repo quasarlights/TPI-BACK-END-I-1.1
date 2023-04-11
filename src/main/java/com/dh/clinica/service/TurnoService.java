@@ -6,12 +6,14 @@ import com.dh.clinica.model.Turno;
 import com.dh.clinica.repository.impl.OdontologoRepository;
 import com.dh.clinica.repository.impl.PacienteRepository;
 import com.dh.clinica.repository.impl.TurnoRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 @Service
+@Slf4j
 public class TurnoService {
 
     private final TurnoRepository turnoRepository;
@@ -41,6 +43,8 @@ public class TurnoService {
                 .orElseThrow(() -> new RuntimeException("Paciente no encontrado"));
         // Asignar el objeto "Paciente" cargado al objeto "Turno"
         turno.setPaciente(paciente);
+
+        log.info("****************Turno Registrado*********************");
         return turnoRepository.save(turno);
     }
     public List<Turno> listar(){

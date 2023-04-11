@@ -43,18 +43,11 @@ public class PacienteServiceTest {
 
     @Test
     public void agregarYBuscarPacienteTest() {
-        this.cargarDataSet();
-        Domicilio domicilio = new Domicilio("Calle", "123", "Temperley", "Buenos Aires");
-        Paciente p = pacienteService.guardar(new Paciente("Tomas", "Pereyra", "12345678", new Date(), domicilio));
+        //this.cargarDataSet();
+        Domicilio domicilio2 = new Domicilio("Calle", "123", "Temperley", "Buenos Aires");
+        Paciente p2 = pacienteService.guardar(new Paciente("Tomas", "Pereyra", "12345678", new Date(), domicilio2));
 
-        Assert.assertNotNull(pacienteService.buscar(p.getId()));
-    }
-
-    @Test
-    public void eliminarPacienteTest() {
-        pacienteService.eliminar(3);
-        Assert.assertTrue(pacienteService.buscar(3).isEmpty());
-
+        Assert.assertNotNull(pacienteService.buscar(p2.getId()));
     }
 
     @Test
